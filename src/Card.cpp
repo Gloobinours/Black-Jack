@@ -10,7 +10,7 @@ Card::Card()
     this -> suit = "placeholder";
     this -> value = 0;
 }
-Card::Card(string n, string s, int v = 0) : name(n), suit(s), value(v)
+Card::Card(string s, int v = 0) : suit(s), value(v)
 {
     if (s == "" || v == NULL || v > 14)
     {
