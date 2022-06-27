@@ -1,2 +1,5 @@
 # Json files
 .vscode/
+
+# bin files
+bin/
