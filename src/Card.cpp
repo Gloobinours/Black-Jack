@@ -16,6 +16,32 @@ Card::Card(string s, int v = 0) : suit(s), value(v)
     {
         throw runtime_error("Incorrect card declaration");
     }
+    
+    //Create name
+    if (value < 11 && value >= 2)
+    {
+        this -> setName(to_string(value), suit);
+    }
+    else if (value == 11)
+    {
+        this -> setName("Jack", suit);
+    }
+    else if (value == 12)
+    {
+        this -> setName("Queen", suit);
+    }
+    else if (value == 13)
+    {
+        this -> setName("King", suit);
+    }
+    else if (value == 14)
+    {
+        this -> setName("Ace", suit);
+    }
+    else
+    {
+        throw runtime_error("Wrong card value");
+    }
 }
 string Card::getName()
 {
