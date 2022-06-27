@@ -4,9 +4,16 @@ using namespace std;
 
 #include "Card.hpp"
 
+/* 
+    Makes a card given a suit and a value.
+    @param string suit
+    @param int value
+    @return an object Card
+*/
 Card makeCard(string suit, int value)
 {
     Card card("", suit, value);
+
     if (value < 11 && value >= 2)
     {
         card.setName(to_string(value), suit);
@@ -38,6 +45,7 @@ Card makeCard(string suit, int value)
 vector<Card> makeDeck()
 {
     vector<Card> deck;
+
     for (int i = 2; i <= 14; i++)
     {
         deck.push_back(makeCard("Clubs", i));
@@ -45,6 +53,7 @@ vector<Card> makeDeck()
         deck.push_back(makeCard("Diamonds", i));
         deck.push_back(makeCard("Hearts", i));
     }
+
     return deck;
 }
 
