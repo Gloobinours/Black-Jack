@@ -1,21 +1,24 @@
 #ifndef CARD_H_
 #define CARD_H_
 
+using namespace std;
+
 class Card
 {
-    std::string name;
-    std::string suit;
+    string name;
+    string suit;
     int value;
 
 public:
     Card();
-    Card(std::string n, std::string s, int v);
-    std::string getName();
-    std::string getSuit();
+    Card(string s, int v);
+    string getName();
+    string getSuit();
     int getValue();
-    void setName(std::string n, std::string s);
+    void setName(string n, string s);
+    Card makeCard(string suit, int value);
 };
 
-std::ostream& operator<<(std::ostream& os, Card& c);
+ostream& operator<<(ostream& os, Card& c);
 
 #endif
