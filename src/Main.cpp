@@ -3,6 +3,8 @@
 using namespace std;
 
 #include "Card.hpp"
+#include "Deck.hpp"
+#include "Player.hpp"
 
 /* 
     Makes a card given a suit and a value.
