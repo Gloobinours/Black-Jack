@@ -34,6 +34,12 @@ void Deck::shuffle()
     auto rng = std::default_random_engine(ms);
     std::shuffle(std::begin(deck), std::end(deck), rng);
 }
+Card Deck::deal()
+{
+    Card output = deck.back();
+    deck.pop_back();
+    return output;
+}
 ostream& operator<<(ostream& os, Deck& d)
 {
     for (int i = 0; i < d.getSize(); i++)
