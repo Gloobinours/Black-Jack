@@ -22,3 +22,16 @@ int Player::getWallet()
 {
     return wallet;
 }
+vector<Card> Player::getHand()
+{
+    return hand;
+}
+ostream& operator<<(ostream& os, Player& p)
+{
+    for (int i = 0; i < p.getHand().size(); i++)
+    {
+        os << "[" << p.getHand()[i].getName() << "] ";
+    }
+    os << endl;
+    return os;
+}
