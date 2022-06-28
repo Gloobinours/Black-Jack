@@ -6,6 +6,17 @@ using namespace std;
 #include "Deck.hpp"
 #include "Player.hpp"
 
+string toUpper(string s)
+{
+    int i = 0;
+    while(s[i])
+    {
+        if(islower(s[i]))
+            s[i] -= 32;
+        i++;
+    }
+    return s;
+}
 int main(int argc, char const *argv[])
 {
     //Create player1
