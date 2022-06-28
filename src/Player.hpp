@@ -12,13 +12,16 @@ using namespace std;
 class Player
 {
     string name;
-    vector<Card> hand();
+    vector<Card> hand;
     int wallet;
 
 public:
     Player(string n, int w);
     string getName();
     int getWallet();
+    vector<Card> getHand();
+    void addHand(Card c);
 };
+ostream& operator<<(ostream& os, Player& p);
 
 #endif

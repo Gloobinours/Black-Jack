@@ -4,6 +4,7 @@ using namespace std;
 
 #include "Player.hpp"
 #include "Deck.hpp"
+#include "Card.hpp"
 
 Player::Player(string n, int w)
 {

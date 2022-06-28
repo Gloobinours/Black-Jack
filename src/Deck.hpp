@@ -15,8 +15,7 @@ public:
     int getSize();
     vector<Card> getDeck();
     void shuffle();
-    vector<Card> deal(vector<Card> d, int n);
-    Card draw();
+    Card deal();
 };
 
 ostream& operator<<(ostream& os, Deck& d);
