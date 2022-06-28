@@ -16,12 +16,38 @@ class Player
     int wallet;
 
 public:
+    /**
+     * Default constructor
+     * @param string n, Player's name
+     * @param int w, money for the Player's wallet
+     */
     Player(string n, int w);
+
+    /**
+     * @return Player's name
+     */
     string getName();
+
+    /**
+     * @return Player's wallet
+     */
     int getWallet();
+
+    /**
+     * @return Player's hand
+     */
     vector<Card> getHand();
+
+    /**
+     * Add card to Player's hand
+     * @param Card c, card to add to the hand
+     */
     void addHand(Card c);
 };
+
+/**
+ * Prints the class
+ */
 ostream& operator<<(ostream& os, Player& p);
 
 #endif
