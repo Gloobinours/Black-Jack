@@ -14,6 +14,10 @@ string Player::getName()
 {
     return name;
 }
+void Player::addHand(Card c)
+{
+    hand.push_back(c);
+}
 int Player::getWallet()
 {
     return wallet;
