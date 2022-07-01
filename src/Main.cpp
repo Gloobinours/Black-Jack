@@ -19,7 +19,7 @@ string toUpper(string s)
 }
 int main(int argc, char const *argv[])
 {
-    //Create player1
+    // Create player1
     string name;
     cout << "What is your name?" << endl;
     cin >> name;
@@ -27,22 +27,32 @@ int main(int argc, char const *argv[])
     
     string prompt;
     string move;
+
     // string stringbet;
     int bet;
-    //Game start
+
+    // Game start
     while(toUpper(prompt) != "STOP")
     {
         Deck deck;
         deck.shuffle();
 
         cout << "How much money would you like to bet?" << endl << player1.getWallet() << endl;
-        cin >> bet;
-
+        try
+        {
+            cin >> bet;
+        }
+        catch(const exception& e)
+        {
+            cerr << "Enter integer an integer value" << '\n';
+            cin >> bet;
+        }
+        
         while(true)
         {
             player1.addHand(deck.deal());
 
-            //Player move
+            // Player move
             cout << player1 << "Would you like to hit";
             if(player1.getHand().size() > 1)
                 cout << ", double,";
@@ -52,11 +62,11 @@ int main(int argc, char const *argv[])
             move = toUpper(move);
             if(move == "HIT")
             {
-
+                
             }
         }
 
-        //Ask to restart
+        // Ask to restart
         cout << "Would you like to play again? Type 'stop' to exit." << endl;
         cin >> prompt;
     }
