@@ -1,13 +1,16 @@
 #include <iostream>
 #include <vector>
-#include <stdlib.h>
-#include <stdio>
 using namespace std;
 
 #include "Card.hpp"
 #include "Deck.hpp"
 #include "Player.hpp"
 
+/**
+ * Transform a string to uppercase letters
+ * @param string s, a string
+ * @return an all uppercase string
+ */
 string toUpper(string s)
 {
     int i = 0;
@@ -19,6 +22,24 @@ string toUpper(string s)
     }
     return s;
 }
+/**
+ * Verify if the string has only numbers
+ * @param string s, a string
+ * @return true if all characters are numbers
+ */
+bool isNumber(string s)
+{
+    for (int i = 0; i < s.size() -1; i++)
+    {
+        if (isdigit(s[i]) == false)
+        {
+            return false;
+        }
+        
+    }
+    return true;
+}
+
 int main(int argc, char const *argv[])
 {
     // Create player1
@@ -34,25 +55,19 @@ int main(int argc, char const *argv[])
     int bet;
 
     // Game start
-    while(toUpper(prompt) != "STOP")
+    while (toUpper(prompt) != "STOP")
     {
         Deck deck;
         deck.shuffle();
 
         cout << "How much money would you like to bet?" << endl << player1.getWallet() << endl;
         cin >> stringbet;
-        if(isdigit(stringbet) = true)
-        // try
-        // {
-        //     cin >> bet;
-        // }
-        // catch(const exception& e)
-        // {
-        //     cerr << "Enter integer an integer value" << '\n';
-        //     cin >> bet;
-        // }
+        if (isdigit(stringbet[0]) == true)
+        {
+            
+        }
         
-        while(true)
+        while (true)
         {
             player1.addHand(deck.deal());
 
