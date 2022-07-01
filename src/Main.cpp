@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <stdlib.h>
+#include <stdio>
 using namespace std;
 
 #include "Card.hpp"
@@ -28,7 +30,7 @@ int main(int argc, char const *argv[])
     string prompt;
     string move;
 
-    // string stringbet;
+    string stringbet;
     int bet;
 
     // Game start
@@ -38,15 +40,17 @@ int main(int argc, char const *argv[])
         deck.shuffle();
 
         cout << "How much money would you like to bet?" << endl << player1.getWallet() << endl;
-        try
-        {
-            cin >> bet;
-        }
-        catch(const exception& e)
-        {
-            cerr << "Enter integer an integer value" << '\n';
-            cin >> bet;
-        }
+        cin >> stringbet;
+        if(isdigit(stringbet) = true)
+        // try
+        // {
+        //     cin >> bet;
+        // }
+        // catch(const exception& e)
+        // {
+        //     cerr << "Enter integer an integer value" << '\n';
+        //     cin >> bet;
+        // }
         
         while(true)
         {
